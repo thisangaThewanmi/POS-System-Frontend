@@ -30,6 +30,26 @@
 
 }
 
+#itemSearch #trolley{
+    width:80px;
+    height:fit-content;
+    position: absolute;
+    bottom: 75px;
+    left:0;
+    right:0;
+    margin: auto;
+
+}
+
+#itemSearch #searchButton{
+    position: absolute;
+    bottom: 20px;
+    left:0;
+    right:0;
+    margin: auto;
+    width:80px;
+
+}
 #searchHeader{
     height:50px;
 }
@@ -40,4 +60,8 @@
     position: absolute;
     left:40px;
     top:80px;
+}
+
+#searchDropDownButton{
+    width:250px;
 }
