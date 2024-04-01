@@ -53,19 +53,44 @@
 
 <!--textFeilds-->
 <div id="ItemForm" class="card">
-    <div class="card-header">
+    <div id="header" class="card-header">
        Item Manage
     </div>
     <div class="card-body">
-        <blockquote class="blockquote mb-0">
-            <p>A well-known quote, contained in a blockquote element.</p>
-            <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
-        </blockquote>
+        <form>
+            <div class="row">
+                <div class="col">
+                    <label >Item Id</label>
+                    <input type="text" class="form-control" placeholder="Item Id" >
+                </div>
+                <div class="col">
+                    <label >Item Name</label>
+                    <input type="text" class="form-control" placeholder="Item name">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <label >Qty</label>
+                    <input type="text" class="form-control" placeholder="qty" >
+                </div>
+                <div class="col">
+                    <label >Price</label>
+                    <input type="text" class="form-control" placeholder="price">
+                </div>
+            </div>
+
+            <div id="FormButton">
+            <button type="button" class="btn btn-success">Add</button>
+            <button  type="button" class="btn btn-danger">Delete</button>
+            <button  type="button" class="btn btn-warning">Update</button>
+            </div>
+        </form>
     </div>
 </div>
 
 
-<!--bodyy-->
+<!--Image-->
 <div id="ItemPicture" class="card text-bg-dark">
   <img src="/assests/item.jpg" class="card-img" alt="itemImage">
   <div class="card-img-overlay">
@@ -83,7 +108,7 @@
         <!--dropdown-->
         <div  class="dropdown">
             <button id="searchDropDownButton" class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Dropdown button
+                Search by id
             </button>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                 <a class="dropdown-item" href="#">Action</a>
@@ -112,9 +137,10 @@
     <thead>
     <tr>
       <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
+      <th scope="col">Item Id</th>
+      <th scope="col">Item Name</th>
+      <th scope="col">Qty</th>
+        <th scope="col">Price</th>
     </tr>
     </thead>
     <tbody>
@@ -130,21 +156,22 @@
       <td>Thornton</td>
       <td>@fat</td>
     </tr>
+
     <tr>
-      <th scope="row">3</th>
-      <td colspan="2">Larry the Bird</td>
-      <td>@twitter</td>
+        <th scope="row">2</th>
+        <td>Jacob</td>
+        <td>Thornton</td>
+        <td>@fat</td>
     </tr>
+
     <tr>
-        <th scope="row">3</th>
-        <td colspan="2">Larry the Bird</td>
-        <td>@twitter</td>
+        <th scope="row">2</th>
+        <td>Jacob</td>
+        <td>Thornton</td>
+        <td>@fat</td>
     </tr>
-    <tr>
-        <th scope="row">3</th>
-        <td colspan="2">Larry the Bird</td>
-        <td>@twitter</td>
-    </tr>
+
+
     </tbody>
     </table>
 
