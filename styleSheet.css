@@ -55,7 +55,7 @@
     background: #8ab1da;
 }
 
-#header{
+.header{
     background: #8ab1da;
 }
 
@@ -103,3 +103,55 @@
 #Cusheader{
     background: #8ab1da;
 }
+
+
+
+
+/*Place order fORM CSS*/
+
+#placeOrderForm{
+    width:500px;
+    height:620px;
+    background: black;
+    position: absolute;
+    top:80px;
+    bottom:20px;
+    left:20px;
+}
+
+#ItemForm{
+    width:450px;
+    height:400px;
+    position: absolute;
+    left:40px;
+    top:90px;
+}
+
+#InvoiceForm{
+    width:450px;
+    height:400px;
+    position: absolute;
+    left:520px;
+    top:90px;
+}
+#orderCard{
+    width:300px;
+    height: 400px;
+    position: absolute;
+    right:30px;
+    top:90px;
+}
+
+#orderTable{
+    width:1300px;
+    height:100px;
+    position: absolute;
+    right:30px;
+    bottom: 30px;
+    left:70px;
+}
+
+#theadOrderTable{
+   color: dodgerblue;
+}
+
