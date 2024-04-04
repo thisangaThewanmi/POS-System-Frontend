@@ -265,3 +265,65 @@
 
 
 
+
+
+/*ITEM MANAGE FORM MEDIA QUERY*/
+
+@media  all and (max-width: 1024px){
+    #ItemPicture{
+        width:400px;
+        height: 270px;
+        border: 1px solid white;
+        position:absolute;
+        left:0;
+    }
+
+    #itemTable{
+        width:600px;
+        height:300px;
+        position: absolute;
+        right:20px;
+        bottom: 0;
+    }
+
+    #Search{
+        width:280px;
+        height:300px;
+        position: absolute;
+        right:40px;
+        top:80px;
+
+    }
+
+    #Search #trolley{
+        width:80px;
+        height:fit-content;
+        position: absolute;
+        bottom: 75px;
+        left:0;
+        right:0;
+        margin: auto;
+
+    }
+
+    #Search #searchButton{
+        position: absolute;
+        bottom: 20px;
+        left:0;
+        right:0;
+        margin: auto;
+        width:150px;
+
+    }
+
+    #Form{
+        width:620px;
+        height:300px;
+        position: absolute;
+        left:40px;
+        top:80px;
+    }
+
+
+
+}
