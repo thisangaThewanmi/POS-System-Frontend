@@ -323,7 +323,53 @@
         left:40px;
         top:80px;
     }
+}
 
 
+@media  all and (max-width: 768px) {
+    #ItemPicture {
 
+        height: 250px;
+
+
+    }
+
+    #itemTable {
+        left: 0;
+        margin: auto;
+        right: 0;
+        bottom: -337px;
+    }
+
+    #Search {
+
+        top: 415px;
+
+    }
+
+    #Search #trolley {
+        width: 50px;
+        height: fit-content;
+        position: absolute;
+        bottom: 75px;
+        left: 0;
+        right: 0;
+        margin: auto;
+
+    }
+
+    #Search #searchButton {
+        position: absolute;
+        bottom: 20px;
+        left: 0;
+        right: 0;
+        margin: auto;
+        width: 150px;
+
+    }
+
+    #Form {
+        width: 670px;
+
+    }
 }
