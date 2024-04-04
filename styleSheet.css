@@ -83,6 +83,15 @@
 }
 
 
+
+
+
+
+
+
+
+
+
 /*Customer Form CSS*/
 
 
@@ -103,6 +112,12 @@
 #Cusheader{
     background: #8ab1da;
 }
+
+
+
+
+
+
 
 
 
@@ -147,7 +162,7 @@
     height:100px;
     position: absolute;
     right:30px;
-    bottom: 30px;
+    bottom: 40px;
     left:70px;
 }
 
@@ -155,25 +170,98 @@
    color: dodgerblue;
 }
 
+
+
+
+
+
+
+
+
+
+
+
+/*Login card*/
+
 #adminImage{
-  width:800px;
+    width:800px;
     height: 800px;
     position:absolute;
     top:0;
     overflow: hidden;
 }
 
-
-/*Login card*/
-
-#loginCard{
-    border:5px solid blue;
+#loginCard {
+    border: 5px solid blue;
     border-radius: 20px;
-    width:400px;
-    height:600px;
+    width: 400px;
+    height: 600px;
     position: absolute;
-    right:200px;
-    top:80px;
-    padding:60px;
+    right: 200px;
+    top: 80px;
+    padding: 60px;
 
 }
+
+#LoginBody{
+    width:99vw;
+    height: 99vh;
+    overflow: hidden;
+}
+
+
+/*LOFGIN FORM MEDIA QUERY*/
+
+
+/* For screens up to 1024px width */
+@media screen and (max-width: 1024px) {
+    #adminImage {
+        width: 600px;
+        height: 600px;
+
+    }
+
+    #loginCard {
+        position: absolute;
+       right:30px;
+    }
+}
+
+/* For screens up to 768px width */
+@media screen and (max-width: 768px) {
+    #loginCard {
+       top:600px;
+        left:0;
+        right:0;
+        margin:auto;
+    }
+
+    #adminImage {
+        width: 600px;
+        height: 600px;
+        left:30px;
+
+    }
+}
+
+/* For smaller screens */
+@media screen and (max-width: 576px) {
+    #adminImage {
+        width: 600px;
+        height: 600px;
+
+    }
+
+    #loginCard {
+        width: 400px;
+        height: 500px;
+        right: 0;
+        left:0;
+        top:570px;
+        padding: 20px;
+        margin: auto;
+    }
+}
+
+
+
