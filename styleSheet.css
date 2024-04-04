@@ -96,22 +96,16 @@
 
 
 #CustomerPicture{
-    width:500px;
-    height:100px;
-  position: absolute;
+    width:400px;
+    height:350px;
+    position: absolute;
     bottom: 0;
+    left:50px;
 
 }
 
 
-#CussearchHeader{
-    height:50px;
-    background: #da79e8;
-}
 
-#Cusheader{
-    background: #8ab1da;
-}
 
 
 
@@ -124,21 +118,13 @@
 
 /*Place order fORM CSS*/
 
-#placeOrderForm{
-    width:500px;
-    height:620px;
-    background: black;
-    position: absolute;
-    top:80px;
-    bottom:20px;
-    left:20px;
-}
+
 
 #ItemForm{
     width:450px;
     height:400px;
     position: absolute;
-    left:40px;
+    left:50px;
     top:90px;
 }
 
@@ -146,11 +132,11 @@
     width:450px;
     height:400px;
     position: absolute;
-    left:520px;
+    left:560px;
     top:90px;
 }
 #orderCard{
-    width:300px;
+    width:400px;
     height: 400px;
     position: absolute;
     right:30px;
@@ -159,7 +145,7 @@
 
 #orderTable{
     width:1300px;
-    height:100px;
+    height:167px;
     position: absolute;
     right:30px;
     bottom: 40px;
@@ -227,7 +213,7 @@
     }
 }
 
-/* For screens up to 768px width */
+
 @media screen and (max-width: 768px) {
     #loginCard {
        top:600px;
@@ -244,7 +230,6 @@
     }
 }
 
-/* For smaller screens */
 @media screen and (max-width: 576px) {
     #adminImage {
         width: 600px;
@@ -372,4 +357,64 @@
         width: 670px;
 
     }
+}
+
+
+
+/*CUSTOMER MANAGE MEDIA QUERY*/
+
+@media screen and (max-width: 1024px) {
+    #CustomerPicture{
+        width:338px;
+        height:339px;
+        left:24px;
+
+    }
+
+}
+
+
+@media screen and (max-width: 768px) {
+    #CustomerPicture{
+        width:341px;
+        height:339px;
+        left:41px;
+
+    }
+}
+
+
+
+
+
+/*PLACE ORDER MEDIA QUERY*/
+
+@media screen and (max-width: 1024px) {
+
+    #ItemForm{
+        width:400px;
+    }
+
+    #InvoiceForm{
+        width:400px;
+        left:-526px;
+    }
+    #orderCard{
+        width:380px;
+        height: 380px;
+        right:-116px;
+
+    }
+
+    #orderTable{
+        width:1150px;
+        height:140px;
+
+    }
+
+}
+
+
+@media screen and (max-width: 768px) {
+
 }
