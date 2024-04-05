@@ -4,6 +4,13 @@
     position: relative;
 }
 
+#logo{
+    color:blue;
+    font-family: Arial;
+    font-weight: bolder;
+    font-style:italic;
+}
+
 #ItemPicture{
     width:600px;
     height:400px;
