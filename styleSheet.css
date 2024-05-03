@@ -4,14 +4,14 @@
     position: relative;
 }
 
-#logo{
+.logo{
     color:blue;
     font-family: Arial;
     font-weight: bolder;
     font-style:italic;
 }
 
-#ItemPicture{
+.ItemPicture{
     width:600px;
     height:400px;
     border: 1px solid white;
@@ -20,7 +20,7 @@
     left:0;
 }
 
-#itemTable{
+.itemTable{
     width:900px;
     height:250px;
     position: absolute;
@@ -28,7 +28,7 @@
     bottom: 0;
 }
 
-#Search{
+.Search{
     width:300px;
     height:300px;
     position: absolute;
@@ -37,7 +37,7 @@
 
 }
 
-#Search #trolley{
+.Search .trolley{
     width:80px;
     height:fit-content;
     position: absolute;
@@ -48,7 +48,7 @@
 
 }
 
-#Search #searchButton{
+.Search .searchButton{
     position: absolute;
     bottom: 20px;
     left:0;
@@ -57,7 +57,7 @@
     width:150px;
 
 }
-#searchHeader{
+.searchHeader{
     height:50px;
     background: #8ab1da;
 }
@@ -66,21 +66,21 @@
     background: #8ab1da;
 }
 
-#Form{
+.Form{
     width:1050px;
     height:300px;
     position: absolute;
     left:40px;
     top:80px;
 }
-#Form #FormButton{
+.Form .FormButton{
    position: absolute;
     bottom:30px;
     right:20px;
 
 }
 
-#searchDropDownButton{
+.searchDropDownButton{
     width:250px;
 
 }
@@ -102,7 +102,7 @@
 /*Customer Form CSS*/
 
 
-#CustomerPicture{
+.CustomerPicture{
     width:400px;
     height:350px;
     position: absolute;
@@ -192,7 +192,7 @@
     position: absolute;
     right: 200px;
     top: 80px;
-    padding: 60px;
+    padding: 40px;
 
 }
 
@@ -200,6 +200,18 @@
     width:99vw;
     height: 99vh;
     overflow: hidden;
+}
+
+#Email{
+    margin-top:px;
+    margin-bottom: 15px;
+}
+
+#password{
+    margin-top:40px;
+}
+#Buttons{
+    margin-top:73px;
 }
 
 
