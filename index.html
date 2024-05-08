@@ -234,10 +234,10 @@
                 </div>
               </div>
               <div id="customer_btn" class="mt-5">
-                <button type="button" class="btn btn-success">Save</button>
-                <button type="button" class="btn btn-primary">Update</button>
-                <button type="button" class="btn btn-danger">Delete</button>
-                <button type="reset" class="btn btn-warning">Clear</button>
+                <button id="btnItemSave"  type="button" class="btn btn-success">Save</button>
+                <button id="btnItemUpdate"  type="button" class="btn btn-primary">Update</button>
+                <button id="btnItemDelete"  class="btn btn-danger">Delete</button>
+                <button id="btnItemClear"  type="reset" class="btn btn-warning">Clear</button>
               </div>
             </form>
           </div>
@@ -274,31 +274,8 @@
                 <th scope="col">Item Price</th>
               </tr>
               </thead>
-              <tbody>
-              <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-              </tr>
-              <tr>
-                <th scope="row">2</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
-              </tr>
-              <tr>
-                <th scope="row">3</th>
-                <td>Larry</td>
-                <td>the Bird</td>
-                <td>@twitter</td>
-              </tr>
-              <tr>
-                <th scope="row">4</th>
-                <td>Larry</td>
-                <td>the Bird</td>
-                <td>@twitter</td>
-              </tr>
+              <tbody id="item-table-body">
+
               </tbody>
             </table>
           </div>
@@ -501,6 +478,8 @@
 
 <script src="javaScript.js"></script>
 <script type="module" src="Controller/CustomerController.js"></script>
+<script type="module" src="Controller/ItemController.js"></script>
+
 
 
 
