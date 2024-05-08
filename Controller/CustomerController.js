@@ -1,5 +1,6 @@
+import {CustomerModel} from "../Model/CustomerModel.js";
+import{customers} from "../db/db.js";
 
-var customers =[];
 var recordIndex;
 
 function loadTable() {
@@ -9,7 +10,7 @@ function loadTable() {
         var record = `
             <tr>
                 <td class="cus-id-value">${customer.id}</td>
-                <td class="cus-name-value">${customer.name}</td>
+                <td class="cus-name-value">${customer.Name}</td>
                 <td class="cus-address-value">${customer.address}</td>
                 <td class="cus-contactNo-value">${customer.contactNo}</td>
             </tr>
@@ -64,21 +65,17 @@ $("#btnCusSave").on('click', () => {
 
 
 
-    let customer={
-        id: CustomerId,
-        name:CustomerName,
-        address:CustomerAddress,
-        contactNo:CustomerContact,
-    }
 
+    let customer= new CustomerModel(CustomerId,CustomerName,CustomerAddress,CustomerContact);
     customers.push(customer);
+
 
     /*console.log(CustomerId);
     console.log(CustomerName);
     console.log(CustomerAddress);
     console.log(CustomerContact);*/
 
-    /*console.log(customers);*/
+    console.log(customers);
 
     loadTable();
     $("btnCusClear").click();
@@ -102,7 +99,7 @@ $("#btnCusUpadate").on('click', () => {
     let customerObj = customers[recordIndex];
 
     customerObj.id = CustomerId;
-    customerObj.name = CustomerName;
+    customerObj.Name = CustomerName;
     customerObj.address = CustomerAddress;
     customerObj.contactNo = CustomerContact;
 
