@@ -82,22 +82,22 @@
                 <input type="text" class="form-control" id="cusId">
               </div>
               <div class="mb-3">
-                <label for="fullname" class="form-label">Customer Full Name</label>
-                <input type="text" class="form-control" id="fullname">
+                <label for="cusFullname" class="form-label">Customer Full Name</label>
+                <input type="text" class="form-control" id="cusFullname">
               </div>
               <div class="mb-3">
                 <label for="cusAddress" class="form-label">Customer Address</label>
                 <textarea class="form-control" id="cusAddress" style="height: 65px"></textarea>
               </div>
               <div class="mb-3">
-                <label for="contact" class="form-label">Customer Contact No</label>
-                <input type="text" class="form-control" id="contact">
+                <label for="cusContactNo" class="form-label">Customer Contact No</label>
+                <input type="text" class="form-control" id=cusContactNo>
               </div>
               <div  class="mt-5">
-                <button type="button" class="btn btn-success">Save</button>
-                <button type="button" class="btn btn-primary">Update</button>
-                <button type="button" class="btn btn-danger">Delete</button>
-                <button type="reset" class="btn btn-warning">Clear</button>
+                <button  id="btnCusSave" type="button" class="btn btn-success">Save</button>
+                <button id="btnCusUpadate" type="button" class="btn btn-primary">Update</button>
+                <button id="btnCusDelete"  type="button" class="btn btn-danger">Delete</button>
+                <button id="btnCusClear"  type="reset" class="btn btn-warning">Clear</button>
               </div>
             </form>
           </div>
@@ -134,8 +134,8 @@
                 <th scope="col">Contact no</th>
               </tr>
               </thead>
-              <tbody>
-              <tr>
+              <tbody id="Cus-table-body">
+              <!--<tr>
                 <th scope="row">1</th>
                 <td>Mark</td>
                 <td>Otto</td>
@@ -158,7 +158,7 @@
                 <td>Larry</td>
                 <td>the Bird</td>
                 <td>@twitter</td>
-              </tr>
+              </tr>-->
               </tbody>
             </table>
           </div>
@@ -500,6 +500,8 @@
         crossorigin="anonymous"></script>
 
 <script src="javaScript.js"></script>
+<script src="Customer.js"></script>
+
 
 
 </body>
