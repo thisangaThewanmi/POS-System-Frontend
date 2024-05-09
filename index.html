@@ -308,24 +308,29 @@
               <input type="text" class="form-control" id="orderID" placeholder="Order ID">
             </div>
             <div class="mb-3">
-              <label for="date" class="form-label">Date</label>
-              <input type="date" class="form-control" id="date" placeholder="Date">
+              <label for="orderDate" class="form-label">Date</label>
+              <input type="date" class="form-control" id="orderDate" placeholder="Date">
+            </div>
+            <div id="searchCusId">
+              <label for="orderCusId" class="form-label">Customer ID</label>
+              <select class="form-select form-select-sm" id="orderCusId" aria-label="Small select example">
+               <!-- <option selected>Cus ID</option>
+                <option value="1">I001</option>
+                <option value="2">I002</option>
+                <option value="3">I003</option>-->
+              </select>
             </div>
             <div class="mb-3">
-              <label for="customerIdSelect" class="form-label">Customer ID</label>
-              <input type="text" class="form-control" id="customerIdSelect" placeholder="Customer ID">
+              <label for="orderCusName" class="form-label">Customer Name</label>
+              <input type="text" class="form-control" id="orderCusName" placeholder="Customer Name">
             </div>
             <div class="mb-3">
-              <label for="customerId" class="form-label">Selected Customer</label>
-              <input type="text" class="form-control" id="customerId" placeholder="Customer ID">
+              <label for="orderCusAddress" class="form-label">Customer Address</label>
+              <input type="text" class="form-control" id="orderCusAddress" placeholder="Customer Address">
             </div>
             <div class="mb-3">
-              <label for="name" class="form-label">Name</label>
-              <input type="text" class="form-control" id="name" placeholder="Customer Name">
-            </div>
-            <div class="mb-3">
-              <label for="address" class="form-label">Address</label>
-              <input type="text" class="form-control" id="address" placeholder="Customer Address">
+              <label for="orderCusContact" class="form-label">Customer Contact</label>
+              <input type="text" class="form-control" id="orderCusContact" placeholder="Customer Contact">
             </div>
           </div>
         </div><!--//CARD EKE-->
@@ -344,15 +349,11 @@
             <div id="searchItemId">
               <label for="O-itemID" class="form-label">Item Code</label>
               <select class="form-select form-select-sm" id="O-itemID" aria-label="Small select example">
-                <option selected>Item IDs</option>
-                <option value="1">I001</option>
+              <!--  <option selected>Item IDs</option>-->
+                <!--<option value="1">I001</option>
                 <option value="2">I002</option>
-                <option value="3">I003</option>
+                <option value="3">I003</option>-->
               </select>
-            </div>
-            <div class="mb-3">
-              <label for="O-itemCode" class="form-label">Item Code</label>
-              <input type="text" class="form-control" id="O-itemCode" placeholder="Item Code">
             </div>
             <div class="mb-3">
               <label for="O-itemName" class="form-label">Item Name</label>
@@ -371,7 +372,7 @@
               <input type="text" class="form-control" id="O-orderQty" placeholder="Order Quantity">
             </div>
             <div class="mb-3">
-              <button type="button" class="btn btn-danger" data-bs-toggle="modal"  data-bs-target="#add-item-modal">ADD Item</button>
+              <button  id="btnAddItem" type="button" class="btn btn-danger" data-bs-toggle="modal"  data-bs-target="#add-item-modal">ADD Item</button>
             </div>
           </div>
         </div>
@@ -479,6 +480,8 @@
 <script src="javaScript.js"></script>
 <script type="module" src="Controller/CustomerController.js"></script>
 <script type="module" src="Controller/ItemController.js"></script>
+<script type="module" src="Controller/PlaceOrderController.js"></script>
+
 
 
 

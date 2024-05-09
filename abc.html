@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Combo Box Example</title>
+  <!-- Include jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+<!-- Select elements to hold the options -->
+<select id="combo-box-1"></select>
+<select id="combo-box-2"></select>
+
+<script>
+  // Sample array data
+  var fruits = ["Apple", "Banana", "Orange", "Grape", "Mango"];
+  var colors = ["Red", "Green", "Blue", "Yellow", "Orange"];
+
+  // Function to load data into combo boxes
+  function loadComboBoxes(array, comboBoxId) {
+    var comboBox = $('#' + comboBoxId); // Get the combo box by ID
+
+    // Clear existing options
+    comboBox.empty();
+
+    // Iterate through the array and add options
+    $.each(array, function(index, value) {
+      comboBox.append($('<option>', {
+        value: value,
+        text: value
+      }));
+    });
+  }
+
+  // Call the function to load data into combo boxes
+  $(document).ready(function() {
+    loadComboBoxes(fruits, '#orderCusId');
+    loadComboBoxes(colors, '#O-itemID');
+  });
+
+</script>
+</body>
+</html>
