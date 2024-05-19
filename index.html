@@ -79,19 +79,23 @@
 
               <div class="mb-3">
                 <label for="cusId" class="form-label">Customer Id</label>
-                <input type="text" class="form-control" id="cusId">
+                <input   type="text" class="form-control" id="cusId" spellcheck="false">
+                <div id="error-msgId" style="color: red"></div>
               </div>
               <div class="mb-3">
                 <label for="cusFullname" class="form-label">Customer Full Name</label>
                 <input type="text" class="form-control" id="cusFullname">
+                <div id="error-msgName" style="color: red"></div>
               </div>
               <div class="mb-3">
                 <label for="cusAddress" class="form-label">Customer Address</label>
                 <textarea class="form-control" id="cusAddress" style="height: 65px"></textarea>
+                <div id="error-msgAddress" style="color: red"></div>
               </div>
               <div class="mb-3">
                 <label for="cusContactNo" class="form-label">Customer Contact No</label>
                 <input type="text" class="form-control" id=cusContactNo>
+                <div id="error-msg" style="color: red"></div>
               </div>
               <div  class="mt-5">
                 <button  id="btnCusSave" type="button" class="btn btn-success">Save</button>

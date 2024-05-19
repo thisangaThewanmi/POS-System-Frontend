@@ -3,6 +3,9 @@ import{customers} from "../db/db.js";
 
 var recordIndex;
 
+
+
+
 function loadTable() {
     $('#Cus-table-body').empty();
 
@@ -48,9 +51,15 @@ $("#Cus-table-body").on('click', 'tr' , function () {
 
 
 /*============save a customer============================*/
-$("#btnCusSave").on('click', () => {
 
-    console.log("start button triggerd");
+
+    $("#btnCusSave").on('click', () => {
+        console.log("start button triggered");
+
+        if (!validateCusId()) {
+            console.log("save eken ena valiCus eka");
+            return;
+        }
 
     var CustomerId = $("#cusId").val();
 
@@ -66,8 +75,11 @@ $("#btnCusSave").on('click', () => {
 
 
 
+
+
     let customer= new CustomerModel(CustomerId,CustomerName,CustomerAddress,CustomerContact);
     customers.push(customer);
+    alert("Customer Saved");
 
 
     /*console.log(CustomerId);
@@ -118,6 +130,48 @@ $("#btnCusDelete").on('click', () => {
     $("#btnCusClear").click();
 });
 
+
+
+
+function  validateCusId(){
+    console.log("validate method called");
+
+    var CustomerId = $("#cusId").val();
+    let pattern = /^C\d{3}$/;
+
+
+    if (pattern.test(CustomerId)) {
+        $('#error-msgId').html("") ;
+        return true;
+    } else {
+        $('#error-msgId').html("Please enter the id in C-*** format");
+        console.log("Please enter the id in C-*** format");
+        return false;
+    }
+}
+
+function  validateCusName(){
+    console.log("validate method called for Name");
+
+    var CustomerName = $("#cusFullname").val();
+    let pattern = /^[A-Za-z]+(([' -][A-Za-z ])?[A-Za-z]*)*$/;
+
+
+    if (pattern.test(CustomerName)) {
+        $('#error-msgName').html("") ;
+        return true;
+    } else {
+        $('#error-msgName').html("Please enter a valid name");
+        console.log("Please enter a valid name");
+        return false;
+    }
+}
+
+
+$("#cusId").on('input', validateCusId);
+$("#cusFullname").on('input', validateCusName);
+$("#cusAddress").on('input', validateCusAddress);
+$("#cusContactNo").on('input', validateCusContact);
 
 
 
