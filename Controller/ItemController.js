@@ -52,33 +52,37 @@ $("#btnItemSave").on('click', () => {
 
     console.log("start button triggerd IN iTEMS");
 
-    var itemId = $("#ItemId").val();
+    if (validateAll()){
+        var itemId = $("#ItemId").val();
 
-    var itemName = $("#ItemName").val();
+        var itemName = $("#ItemName").val();
 
-    var itemQty = $("#ItemQty").val();
+        var itemQty = $("#ItemQty").val();
 
-    var itemPrice = $("#ItemPrice").val();
-
-
-
+        var itemPrice = $("#ItemPrice").val();
 
 
 
 
-    let item= new ItemModel(itemId,itemName,itemQty,itemPrice);
-    items.push(item);
 
 
-    /*console.log(CustomerId);
-    console.log(CustomerName);
-    console.log(CustomerAddress);
-    console.log(CustomerContact);*/
 
-    console.log(items);
+        let item= new ItemModel(itemId,itemName,itemQty,itemPrice);
+        items.push(item);
 
-    loadTable();
-    $("#btnItemClear").click();
+
+        /*console.log(CustomerId);
+        console.log(CustomerName);
+        console.log(CustomerAddress);
+        console.log(CustomerContact);*/
+
+        console.log(items);
+
+        loadTable();
+        $("#btnItemClear").click();
+
+
+    }
 
 
 });
@@ -194,6 +198,22 @@ $('#ItemQty').on('input',validateItemQty);
 $('#ItemPrice').on('input',validateItemPrice);
 
 
+function validateAll() {
+    // Call each validation method and store the result
+    let isValidId = validateItemId();
+    let isValidName = validateItemName();
+    let isValidQty = validateItemQty();
+    let isValidPrice = validateItemPrice();
+
+    // Check if all validation methods return true
+    if (isValidId && isValidName && isValidQty && isValidPrice) {
+        // All validations passed
+        return true;
+    } else {
+        // At least one validation failed
+        return false;
+    }
+}
 
 
 
