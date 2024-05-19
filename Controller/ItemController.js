@@ -118,6 +118,84 @@ $("#btnItemDelete").on('click', () => {
     $("#btnItemClear").click();
 });
 
+function validateItemId() {
+    console.log("method validateItemId called");
+
+    var ItemId = $('#ItemId').val();
+    let pattern = /^I\d{3}$/;
+
+       if (pattern.test(ItemId)) {
+        $('#error-ItemId').html("");
+        return true;
+       }
+
+       else {
+        $('#error-ItemId').html("Please enter in the I-*** format  ");
+        return false;
+    }
+}
+
+function validateItemName() {
+    console.log("method validateItemName called");
+
+    var ItemName = $('#ItemName').val();
+    let pattern = /^[A-Za-z]+(([' -][A-Za-z ])?[A-Za-z]*)*$/;
+
+    if (pattern.test(ItemName)) {
+        $('#error-ItemName').html("");
+        return true;
+    }
+
+    else {
+        $('#error-ItemName').html("Please enter a valid Name  ");
+        return false;
+    }
+}
+
+
+function validateItemQty() {
+    console.log("method validateItemQty called");
+
+    var Itemqty = $('#ItemQty').val();
+    let pattern = /^[1-9]\d*$/;
+
+    if (pattern.test(Itemqty)) {
+        $('#error-ItemQty').html("");
+        return true;
+    }
+
+    else {
+        $('#error-ItemQty').html("Please enter a valid quantity ");
+        return false;
+    }
+}
+
+
+function validateItemPrice() {
+    console.log("method validateItemprice called");
+
+    var ItemPrice = $('#ItemPrice').val();
+    let pattern = /^Rs\.\d{1,}$/;
+
+    if (pattern.test(ItemPrice)) {
+        $('#error-ItemPrice').html("");
+        return true;
+    }
+
+    else {
+        $('#error-ItemPrice').html("Please enter in the format Rs.****");
+        return false;
+    }
+}
+
+$('#ItemId').on('input',validateItemId);
+$('#ItemName').on('input',validateItemName);
+$('#ItemQty').on('input',validateItemQty);
+$('#ItemPrice').on('input',validateItemPrice);
+
+
+
+
 
 
 
