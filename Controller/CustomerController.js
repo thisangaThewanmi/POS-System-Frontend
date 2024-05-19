@@ -56,18 +56,36 @@ $("#Cus-table-body").on('click', 'tr' , function () {
     $("#btnCusSave").on('click', () => {
         console.log("start button triggered");
 
-        if (!validateCusId()) {
-            console.log("save eken ena valiCus eka");
-            return;
+        if (validateAll()) {
+            var CustomerId = $("#cusId").val();
+
+            var CustomerName = $("#cusFullname").val();
+
+            var CustomerAddress = $("#cusAddress").val();
+
+            var CustomerContact = $("#cusContactNo").val();
+
+
+            let customer= new CustomerModel(CustomerId,CustomerName,CustomerAddress,CustomerContact);
+            customers.push(customer);
+            alert("Customer Saved");
+
+
+            /*console.log(CustomerId);
+            console.log(CustomerName);
+            console.log(CustomerAddress);
+            console.log(CustomerContact);*/
+
+            console.log(customers);
+
+            loadTable();
+            $("btnCusClear").click();
+
+
+
+
         }
 
-    var CustomerId = $("#cusId").val();
-
-    var CustomerName = $("#cusFullname").val();
-
-    var CustomerAddress = $("#cusAddress").val();
-
-    var CustomerContact = $("#cusContactNo").val();
 
 
 
@@ -75,22 +93,6 @@ $("#Cus-table-body").on('click', 'tr' , function () {
 
 
 
-
-
-    let customer= new CustomerModel(CustomerId,CustomerName,CustomerAddress,CustomerContact);
-    customers.push(customer);
-    alert("Customer Saved");
-
-
-    /*console.log(CustomerId);
-    console.log(CustomerName);
-    console.log(CustomerAddress);
-    console.log(CustomerContact);*/
-
-    console.log(customers);
-
-    loadTable();
-    $("btnCusClear").click();
 
 
 });
@@ -167,6 +169,44 @@ function  validateCusName(){
     }
 }
 
+function  validateCusAddress(){
+    console.log("validate method called for Name");
+
+    var CustomerAddress = $("#cusAddress").val();
+    let pattern =  /^[a-zA-Z0-9\s,.'-]{3,}$/;;
+
+
+    if (pattern.test(CustomerAddress)) {
+        $('#error-msgAddress').html("") ;
+        return true;
+    } else {
+        $('#error-msgAddress').html("Please enter a valid address");
+        console.log("Please enter a valid Address");
+        return false;
+    }
+}
+
+
+function  validateCusContact(){
+    console.log("validate method called for Contact");
+
+    var CustomerContact = $("#cusContactNo").val();
+    let pattern = /^\+?(\d[\d-. ]+)?(\([\d-. ]+\))?[\d-. ]+\d$/;
+
+
+
+    if (pattern.test(CustomerContact)) {
+        $('#error-msgContact').html("") ;
+        return true;
+    } else {
+        $('#error-msgContact').html("Please enter a valid address");
+        console.log("Please enter a valid Address");
+        return false;
+    }
+}
+
+
+
 
 $("#cusId").on('input', validateCusId);
 $("#cusFullname").on('input', validateCusName);
@@ -175,6 +215,22 @@ $("#cusContactNo").on('input', validateCusContact);
 
 
 
+function validateAll() {
+    // Call each validation method and store the result
+    let isValidId = validateCusId();
+    let isValidName = validateCusName();
+    let isValidAddress = validateCusAddress();
+    let isValidContact = validateCusContact();
+
+    // Check if all validation methods return true
+    if (isValidId && isValidName && isValidAddress && isValidContact) {
+        // All validations passed
+        return true;
+    } else {
+        // At least one validation failed
+        return false;
+    }
+}
 
 
 
