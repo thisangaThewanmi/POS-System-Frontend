@@ -117,6 +117,7 @@ $("#btnItemUpdate").on('click', () => {
 $("#btnItemDelete").on('click', () => {
 
     items.splice(recordIndex, 1);
+    console.log(items);
 
     loadTable();
     $("#btnItemClear").click();
