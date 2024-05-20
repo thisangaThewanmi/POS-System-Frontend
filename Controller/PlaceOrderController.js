@@ -1,7 +1,10 @@
 import {items} from "../db/db.js";
 import {customers} from "../db/db.js";
+import {itemCart} from "../db/db.js";
 
 
+
+console.clear();
 /*------------------------------------------*/
 
 function loadComboBoxes(array, comboBoxId) {
@@ -75,3 +78,61 @@ $('#O-itemID').change(function () {
     console.log("cusId:", itemId);
     loadItemData(itemId);
 });
+
+/*==============================save to the cart=======================*/
+
+
+$("#btnAddItem").on('click', () => {
+    var OrderItemId = $('#O-itemID').val();
+    var OrderItemName = $('#O-itemName').val();
+    var OrderItemPrice = $('#O-itemPrice').val();
+    var OrderQty = $('#O-orderQty').val();
+
+    var total=OrderQty*OrderItemPrice;
+    console.log("total:"+total);
+
+    // Create an object to store item data
+    const orderItem = {
+        id: OrderItemId,
+        name: OrderItemName,
+        qty: OrderQty,
+        price: OrderItemPrice,
+        total:total
+    };
+
+    // Push the object to the itemCart array
+
+    itemCart.push(orderItem);
+
+    updateItemQty();
+
+    console.log(itemCart);
+
+})
+
+
+function updateItemQty() {
+
+    var OrderItemId = $('#O-itemID').val();
+
+    for (var i = 0; i < items.length; i++) {
+        if (OrderItemId === items[i].id) {
+            var currentItemQty = items[i].qty;
+            console.log("currentItemQty : "+currentItemQty);
+            var OrderQty = $('#O-orderQty').val();
+            console.log("currentOrderQty : "+OrderQty);
+            var updatedQty = currentItemQty - OrderQty;
+            console.log("updateQty : "+updatedQty);
+
+            items[i].qty = updatedQty;
+            console.log(" items[i].qty"+ items[i].qty);
+        }
+
+    }
+}
+
+
+/*===========================load into the table==================*/
+
+
+
