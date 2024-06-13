@@ -2,12 +2,16 @@
 
     border-radius: 20px;
    margin-top: 10px;
+
 }
 
 .Container{
    /* background: rgba(19, 18, 18, 0.79);*/
-    margin-top:40px;
-    margin-left:20px;
+    width:87%;
+    height: fit-content;
+   /* margin-top:40px;
+    margin-left:20px;*/
+    margin: auto;
     padding:15px;
     border-radius: 20px;
      box-shadow: rgb(193, 57, 203) 0px 5px 15px;
@@ -26,10 +30,12 @@
 }
 
 .Label{
-    color: black;
+    color: white;
     font-size: 32px;
     margin-top:20px;
     margin-left:40px;
+    margin-bottom:30px;
+    text-shadow: rebeccapurple;
 }
 
 img{
@@ -74,6 +80,8 @@ img{
     background: #c98fc9
 
 }
+
+
 
 
 

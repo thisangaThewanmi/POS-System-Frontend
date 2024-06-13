@@ -180,7 +180,8 @@ function validateItemPrice() {
     console.log("method validateItemprice called");
 
     var ItemPrice = $('#ItemPrice').val();
-    let pattern = /^Rs\.\d{1,}$/;
+    let pattern = /^\d{1,4}\.\d{2}$/;
+
 
     if (pattern.test(ItemPrice)) {
         $('#error-ItemPrice').html("");

@@ -29,3 +29,12 @@ $('#placeOrder-link').on('click',()=>{
     $('#item').css({display:'none'});
     $('#order').css({display:'block'});
 });
+
+$('#orderDetail-link').on('click',()=>{
+    console.log("course click")
+
+    $('#customer').css({display:'none'});
+    $('#item').css({display:'none'});
+    $('#order').css({display:'none'});
+    $('#orderDetail').css({display:'block'});
+});

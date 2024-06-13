@@ -9,37 +9,18 @@
 </head>
 <body>
 <!-- Select elements to hold the options -->
-<select id="combo-box-1"></select>
-<select id="combo-box-2"></select>
-
-<script>
-  // Sample array data
-  var fruits = ["Apple", "Banana", "Orange", "Grape", "Mango"];
-  var colors = ["Red", "Green", "Blue", "Yellow", "Orange"];
-
-  // Function to load data into combo boxes
-  function loadComboBoxes(array, comboBoxId) {
-    var comboBox = $('#' + comboBoxId); // Get the combo box by ID
-
-    // Clear existing options
-    comboBox.empty();
-
-    // Iterate through the array and add options
-    $.each(array, function(index, value) {
-      comboBox.append($('<option>', {
-        value: value,
-        text: value
-      }));
-    });
-  }
-
-  // Call the function to load data into combo boxes
-/*
-  $(document).ready(function() {
-    loadComboBoxes(fruits, '#orderCusId');
-    loadComboBoxes(colors, '#O-itemID');
-  });
-*/
+<div class="col">
+  <div class="mb-3">
+    <label for="ItemPrice" class="form-label">Item Price</label>
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <span class="input-group-text">Rs.</span>
+      </div>
+      <input type="text" class="form-control" id="ItemPrice">
+    </div>
+    <div id="error-ItemPrice" style="color: red"></div>
+  </div>
+</div>
 
 </script>
 </body>
