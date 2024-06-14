@@ -79,7 +79,7 @@ $("#Cus-table-body").on('click', 'tr' , function () {
             console.log(customers);
 
             loadTable();
-            $("btnCusClear").click();
+            $("#btnCusClear").click();
 
 
 
@@ -231,6 +231,52 @@ function validateAll() {
         return false;
     }
 }
+
+
+
+/*================================================Cus Search====================================*/
+
+
+// Function to simulate fetching customer data (replace with your actual backend call)
+
+    // Function to handle customer search
+    $('#searchButton').on('click', function() {
+        var customerName = $('#CusSearchBar').val().trim(); // Get customer name from input
+
+        // Perform a check to ensure customerName is not empty
+        if (customerName === '') {
+            alert('Please enter a customer name.');
+            return;
+        }
+
+
+        var customerData = findCustomerByName(customerName); // Replace with your actual function to fetch data
+
+        if(customerData){
+            alert("Customer Found :)");
+        }else{
+            alert("CustomerNot Found :(");
+        }
+
+        $('#CusSearchBar').val('');
+
+    });
+
+
+    // Function to simulate fetching customer data (replace with your actual backend call)
+    function findCustomerByName(name) {
+
+        for (var i = 0; i < customers.length; i++) {
+            if (name === customers[i].Name) {
+                console.log("cusName", customers[i].Name);
+                $('#cusId').val(customers[i].id);
+                $('#cusName').val(customers[i].Name);
+                $('#cusAddress').val(customers[i].address);
+                $('#cusContactNo').val(customers[i].contactNo);
+            }
+        }
+
+    }
 
 
 

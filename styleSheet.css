@@ -39,7 +39,7 @@
 }
 
 img{
-    width: 398px;
+    width: 300px;
     height: 309px;
     box-shadow: rgb(193, 57, 203) 0px 5px 15px;
 }
@@ -80,6 +80,18 @@ img{
     background: #c98fc9
 
 }
+
+.search-container{
+    display:flex;
+}
+
+.Mytable{
+    border-radius: 20px;
+    margin-left:5px;
+    /* width: 79%; */
+    padding: 27px
+}
+
 
 
 

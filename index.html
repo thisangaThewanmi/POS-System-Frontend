@@ -59,8 +59,8 @@
           <div  class="card">
             <div class="card-body">
               <div class="search-container">
-                <input type="text" class="form-control"  placeholder="search here">
-                <button type="button" class="btn btn-success">Search</button>
+                <input type="text" class="form-control"  id="CusSearchBar" placeholder="search here">
+                <button  id="searchButton" type="button" class="btn btn-success">Search</button>
               </div>
             </div>
           </div>
@@ -129,7 +129,7 @@
     <!--------------------row 2--------------------->
 
     <div class="Mytable" class="row">
-      <div class="col col-lg-11 col-md-12 col-sm-12 col-12">
+      <div class="table" class="col col-lg-11 col-md-12 col-sm-12 col-12">
         <div class="card">
           <div class="card-body">
             <table class="table">
@@ -273,7 +273,7 @@
     <!--------------------row 2--------------------->
 
     <div class="Mytable" class="row">
-      <div class="col col-lg-11 col-md-12 col-sm-12 col-12">
+      <div class="table" class="col col-lg-11 col-md-12 col-sm-12 col-12">
         <div class="card">
           <div class="card-body">
             <table class="table">
@@ -309,7 +309,7 @@
       <div  class="col col-lg-4 col-md-12 col-sm-12 col-12">
 
 
-        <div class="card searchCustomerCard">
+        <div class="card searchCustomerCard" class="orderCards">
           <div class="header" id="invoiceDetailCard">
             Invoice Details
           </div>
@@ -352,7 +352,7 @@
 
       <div  class="col col-lg-4 col-md-12 col-sm-12 col-12">
 
-        <div class="card searchCustomerCard">
+        <div class="card searchCustomerCard"  class="orderCards">
           <div class="header" id="ItemDetailCard">
             Item Details
           </div>
@@ -392,7 +392,7 @@
 
 
       <div  class="col col-lg-4 col-md-12 col-sm-12 col-12">
-        <div class="card searchCustomerCard">
+        <div class="card searchCustomerCard"  class="orderCards">
 
           <div class="card-body">
             <div >
@@ -400,7 +400,7 @@
               <h2></h2>
             </div>
             <div >
-              <h2 id="subTotalPriceLabel">Sub Total :00.00 </h2>
+              <h2  >SubTotal :Rs. <span id="subTotalPriceLabel"> </span></h2>
               <h2></h2>
             </div>
             <div class="mb-3">
@@ -416,7 +416,7 @@
               <input type="text" class="form-control" id="balance" placeholder="Balance">
             </div>
             <div class="mb-3">
-              <button type="button" class="btn btn-success" data-bs-toggle="modal"  data-bs-target="#place-order-modal">Place Order</button>
+              <button type="button" id="btnPlaceOrder" class="btn btn-success" data-bs-toggle="modal"  data-bs-target="#place-order-modal">Place Order</button>
             </div>
           </div>
         </div>
@@ -431,10 +431,10 @@
 
   <div  class="Container" class="order_container">
     <div class="row">
-      <div class="col col-lg-11 col-md-12 col-sm-12 col-12">
+      <div  class="table" class="col col-lg-11 col-md-12 col-sm-12 col-12">
         <div class="card">
           <div class="card-body">
-            <table class="table">
+            <table class="table table-striped">
               <thead>
               <tr>
                 <th scope="col" >ItemCode</th>
@@ -482,47 +482,25 @@
 
 
 <section id="orderDetail">
-  <label class="Label"> OrderDetails</label>
-  <div  class="Container" class="order_container">
+  <label class="Label">OrderDetails</label>
+  <div class="Container order_container">
     <div class="row">
-      <div class="col col-lg-11 col-md-12 col-sm-12 col-12">
+      <div class="table" class="col col-lg-11 col-md-12 col-sm-12 col-12">
         <div class="card">
           <div class="card-body">
-            <table class="table">
+            <table class="table table-striped" >
               <thead>
               <tr>
-                <th scope="col" >ItemCode</th>
-                <th scope="col" >ItemName</th>
-                <th scope="col" >qty</th>
-                <th scope="col" >Price</th>
-                <th scope="col" >Total</th>
+                <th scope="col">Order Id</th>
+                <th scope="col">Customer Id</th>
+                <th scope="col">Customer Name</th>
+                <th scope="col">Total</th>
+                <th scope="col">Discount</th>
+                <th scope="col">Sub Total</th>
               </tr>
               </thead>
-              <tbody id="orderDetails-tablebody">
-              <!-- <tr>
-                 <th scope="row">1</th>
-                 <td>Mark</td>
-                 <td>Otto</td>
-                 <td>@mdo</td>
-               </tr>
-               <tr>
-                 <th scope="row">2</th>
-                 <td>Jacob</td>
-                 <td>Thornton</td>
-                 <td>@fat</td>
-               </tr>
-               <tr>
-                 <th scope="row">3</th>
-                 <td>Larry</td>
-                 <td>the Bird</td>
-                 <td>@twitter</td>
-               </tr>
-               <tr>
-                 <th scope="row">4</th>
-                 <td>Larry</td>
-                 <td>the Bird</td>
-                 <td>@twitter</td>
-               </tr>-->
+              <tbody id="orderDetail-tablebody">
+              <!-- Table rows will be dynamically added here -->
               </tbody>
             </table>
           </div>
@@ -530,8 +508,6 @@
       </div>
     </div>
   </div>
-  </div>
-
 </section>
 
 
@@ -547,6 +523,9 @@
 <script type="module" src="Controller/CustomerController.js"></script>
 <script type="module" src="Controller/ItemController.js"></script>
 <script type="module" src="Controller/PlaceOrderController.js"></script>
+
+
+
 
 
 
