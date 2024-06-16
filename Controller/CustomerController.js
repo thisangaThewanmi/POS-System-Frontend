@@ -252,6 +252,8 @@ function validateAll() {
 
         var customerData = findCustomerByName(customerName); // Replace with your actual function to fetch data
 
+
+
         if(customerData){
             alert("Customer Found :)");
         }else{
@@ -273,6 +275,7 @@ function validateAll() {
                 $('#cusName').val(customers[i].Name);
                 $('#cusAddress').val(customers[i].address);
                 $('#cusContactNo').val(customers[i].contactNo);
+                return true;
             }
         }
 

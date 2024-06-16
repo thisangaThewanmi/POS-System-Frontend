@@ -42,6 +42,7 @@ $('#placeOrder-link').click(function () {  //place order link eka ebuwama withar
 
     loadComboBoxes(customers, '#orderCusId'); // meken method ekata array ekai cmb id ekai yawanoo
     loadComboBoxes(items, '#O-itemID');
+    autoGenerateOrderId();
 });
 
 function loadCusData(cusId) {
@@ -152,6 +153,10 @@ $("#btnAddItem").on('click', () => {
         return;
     }
 
+
+    updateItemQty();
+
+
      total = OrderQty * OrderItemPrice;
     console.log("total: " + total);
 
@@ -168,21 +173,18 @@ $("#btnAddItem").on('click', () => {
     // Push the object to the itemCart array
     itemCart.push(cartItem);
 
-    updateItemQty(OrderItemId, OrderQty);
+    /*updateItemQty(OrderItemId, OrderQty);*/
 
     console.log(itemCart);
     loadTable();
 
-    $('#orderID').val('');
-    $('#orderDate').val('');
-    $('#orderCusId').val('');
-     $('#orderCusName').val('');
     $('#O-itemID').val('');
     $('#O-itemName').val('');
     $('#O-itemPrice').val('');
     $('#O-orderQty').val('');
-    $('#orderCusAddress').val('');
-    $('#orderCusContact').val('');
+
+
+
 
     $("#discount, #cash").on('input', () => { // listeners danoo
         var discount = parseFloat($('#discount').val()); // meken eka parse krla ganno
@@ -207,11 +209,14 @@ $("#btnAddItem").on('click', () => {
 
 $('#btnPlaceOrder').on('click', () => {
 
+
     var OrderId = $('#orderID').val();
     var OrderDate = $('#orderDate').val();
     var CustomerId = $('#orderCusId').val();
     var CustomerName = $('#orderCusName').val();
     var total=$('#totalPriceLabel').text();
+
+
 
 
   /*  var discount=$('#discount').val();*/
@@ -245,6 +250,17 @@ $('#btnPlaceOrder').on('click', () => {
     $('#discount').val('');
     $('#subTotalPriceLabel').val('');
 
+
+    $('#orderID').val('');
+    $('#orderDate').val('');
+    $('#orderCusId').val('');
+    $('#orderCusName').val('');
+    $('#orderCusAddress').val('');
+    $('#orderCusContact').val('');
+
+
+
+
     /*let orderDetailRec = new orderDetailsModel(OrderId,OrderDate,CustomerId,CustomerName,total,discount,subTotal);
     console.log("orderDetail11 :"+ orderDetailRec);
 
@@ -264,7 +280,15 @@ $('#btnPlaceOrder').on('click', () => {
 /*==========================loading order Detail Table=================================*/
 
 
-function loadODTable() {
+$('#orderDetail-link').click(function () {  //place order link eka ebuwama witharak meka load wenna ona e nisaii header link ekata id dunne ntm mulinma load unoth arraya nisa data na
+    console.log("main method");
+    loadODTable();
+    console.log("load eka cll una");
+});
+
+
+
+/*function loadODTable() {
     // Clear existing rows in the table body
     $('#orderDetails-tablebody').empty();
 
@@ -287,12 +311,12 @@ function loadODTable() {
         $("#orderDetails-tablebody").append(record);
 
     });
-}
+}*/
 
 
 
 
-/*function loadODTable() {
+function loadODTable() {
     // Select the table body where rows will be appended
     var tableBody = $('#orderDetail-tablebody');
 
@@ -315,10 +339,47 @@ function loadODTable() {
         // Append the row to the table body
         tableBody.append(row);
     });
-}  mekath hari but terum ganna amaruiii*/
+} /* mekath hari but terum ganna amaruiii*/
 
 
-/*===============================================Claering Data============================*/
+/*===============================================Generating OrderId============================*/
+
+
+
+/*function autoGenerateOrderId(orderId) {
+
+    console.log("currentOrderId: " + orderId);
+
+    if(orderId !== "") {
+        var split = [];
+        split = orderId.split("O0");
+        var id = Number.parseInt(split[1]);
+        id++;
+        if(id < 10) {
+            $("#orderId").val("O00" + id);
+        }else{
+            $("#orderId").val("O0" + id);
+        }
+    } else {
+        $("#orderId").val("O001");
+    }
+
+}*/
+
+/*
+var orderIdCounter = 0; // Counter for generating sequential order IDs
+
+function autoGenerateOrderId() {
+   orderIdCounter= orderIdCounter++;
+    if (orderIdCounter < 10) {
+        return "O00" + orderIdCounter;
+    } else if (orderIdCounter < 100) {
+        return "O0" + orderIdCounter;
+    } else {
+        return "O" + orderIdCounter;
+    }
+}
+*/
 
 
 
