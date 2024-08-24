@@ -1,14 +1,30 @@
-import {items} from "../db/db.js";
-import {customers} from "../db/db.js";
-import {itemCart} from "../db/db.js";
-import {ItemCartModel} from "../Model/ItemCartModel.js";
-import {orderDetails} from "../db/db.js";
-import {orderDetailsModel} from "../Model/orderDetailsModel.js";
 
 
 
+autoGenerateOrderId("");
+console.log("orderIdcalled");
 
-console.clear();
+
+function autoGenerateOrderId(orderId) {
+
+    console.log("currentOrderId: " + orderId);
+
+    if(orderId !== "") {
+        var split = [];
+        split = orderId.split("O0");
+        var id = Number.parseInt(split[1]);
+        id++;
+        if(id < 10) {
+            $("#orderID").val("O00" + id);
+        }else{
+            $("#orderID").val("O0" + id);
+        }
+    } else {
+        $("#orderID").val("O001");
+    }
+
+}
+
 /*------------------------------------------*/
 
 
@@ -42,7 +58,13 @@ $('#placeOrder-link').click(function () {  //place order link eka ebuwama withar
 
     loadComboBoxes(customers, '#orderCusId'); // meken method ekata array ekai cmb id ekai yawanoo
     loadComboBoxes(items, '#O-itemID');
-    autoGenerateOrderId();
+
+    if( orderDetails===0){
+       var GenertedOID = autoGenerateOrderId("");
+        console.log("cllunaid generator eka");
+
+    }
+
 });
 
 function loadCusData(cusId) {
@@ -243,6 +265,8 @@ $('#btnPlaceOrder').on('click', () => {
 
     console.log(orderDetails);
 
+
+
     loadODTable();
 
 
@@ -257,6 +281,8 @@ $('#btnPlaceOrder').on('click', () => {
     $('#orderCusName').val('');
     $('#orderCusAddress').val('');
     $('#orderCusContact').val('');
+
+    autoGenerateOrderId(OrderId);
 
 
 
@@ -346,25 +372,7 @@ function loadODTable() {
 
 
 
-/*function autoGenerateOrderId(orderId) {
 
-    console.log("currentOrderId: " + orderId);
-
-    if(orderId !== "") {
-        var split = [];
-        split = orderId.split("O0");
-        var id = Number.parseInt(split[1]);
-        id++;
-        if(id < 10) {
-            $("#orderId").val("O00" + id);
-        }else{
-            $("#orderId").val("O0" + id);
-        }
-    } else {
-        $("#orderId").val("O001");
-    }
-
-}*/
 
 /*
 var orderIdCounter = 0; // Counter for generating sequential order IDs
