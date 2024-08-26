@@ -1,10 +1,17 @@
 
 
-var recordIndex;
+var CusRecordIndex;
 
 window.onload = function() {
-    loadTable();
+    console.log("cus for eka load una")
+    loadTable()
 };
+
+
+$(document).ready(function() {
+    $("#customer").on('submit', function(event) {
+        event.preventDefault(); // Prevent the default form submission
+
 
 /*--------------------------------------------------------------------------*/
 
@@ -45,7 +52,7 @@ function loadTable() {
 
         }
     });
-///////////////////////////////////
+
 
 
     /*--------------------------------------------------------------------------*/
@@ -55,7 +62,7 @@ function loadTable() {
     $("#Cus-table-body").on('click', 'tr', function () {
 
         let index = $(this).index();
-        recordIndex = index;
+        CusRecordIndex = index;
 
         console.log("index: ", index);
 
@@ -77,7 +84,7 @@ function loadTable() {
     /*---------------------------      save a customer      -----------------------------------*/
 
     $("#btnCusSave").on('click', () => {
-        console.log("start button triggered");
+        console.log("start button Customer");
 
         if (validateAll()) {
             var CustomerId = $("#cusId").val();
@@ -168,7 +175,7 @@ function loadTable() {
             }
         });
 
-
+ loadTable();
         $("#btnCusClear").click();
     });
 
@@ -354,6 +361,10 @@ function loadTable() {
 
     }
 }
+
+////////////////////////////  dom eke end eka /////////////
+    });
+});
 
 
 
