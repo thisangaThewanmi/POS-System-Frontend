@@ -11,9 +11,7 @@ $('#btnPlaceOrder').on('click', () => {
     console.log("place order btn eka ebuwa")
 });
 
-$("#btnAddItem").on('click', () => {
-    console.log("btn Add Item Clicked")
-});
+
 
 
 /*------------- load combo boxes -------------------*/
@@ -197,3 +195,106 @@ function loadCusData(cusId){
 
 }
 /*----------------------------------------------------*/
+
+
+
+var total =0;
+var finalTotal=0;
+
+
+$("#btnAddItem").on('click', () => {
+
+    var OrderId = $('#orderID').val();
+    var OrderItemId = $('#O-itemID').val();
+    var OrderItemName = $('#O-itemName').val();
+    var OrderItemPriceString = $('#O-itemPrice').val();
+    var OrderItemPrice = parseFloat(OrderItemPriceString.replace(/[^0-9.]/g, ''));
+    console.log(OrderItemPrice+"OrderItemPrice");
+
+
+    // Parse quantity as integer
+    var OrderQtyString = $('#O-orderQty').val();
+    var OrderQty = parseInt(OrderQtyString);
+    console.log(OrderQty+"orderQty");
+
+    if (isNaN(OrderItemPrice) || isNaN(OrderQty)) {
+        alert("Please enter valid numbers for price and quantity.");
+        return;
+    }
+
+    updateItemQty();
+
+    total = OrderQty * OrderItemPrice;
+    console.log("total: " + total);
+
+    finalTotal += total; // Incrementally add to final total
+    console.log("Final Total: " + finalTotal);
+
+    $('#totalPriceLabel').text(finalTotal);
+
+    // Create an object to store item data
+    const itemCart={
+        orderId:OrderId,
+        itemCode: OrderItemId,
+        itemName: OrderItemName,
+        qty:OrderQty,
+        price:OrderItemPrice,
+        total: total
+    }
+
+    console.log("itemCart obj "+ itemCart)
+
+    const jsonItemCart = JSON.stringify(itemCart);
+    console.log("jsonObject:" + jsonItemCart.toString());
+
+
+    $.ajax({
+        url: "http://localhost:8080/itemCart",
+        type: "POST",
+        data: jsonItemCart,
+        headers: {"Content-Type": "application/json"},
+        success: function (results) {
+            console.log("results" + results.toString())
+            alert('ItemCart saved successfully...')
+
+
+        },
+        error: function (error) {
+            console.log(error)
+            alert('ItemCart not saved...')
+        }
+    });
+
+
+    $('#O-itemID').val('');
+    $('#O-itemName').val('');
+    $('#O-itemPrice').val('');
+    $('#O-orderQty').val('');
+
+
+
+
+    /*----------------------------------------------------*/
+    $("#discount, #cash").on('input', () => { // listeners danoo
+        var discount = parseFloat($('#discount').val()); // meken eka parse krla ganno
+        if (isNaN(discount) || discount < 0) { // mekedi balnoo meka not a numberda ntm 0 wlta wada aduda kila ehenm ekata 0 assign karanoo
+            discount = 0;
+        }
+
+        var discountedTotal = finalTotal - (finalTotal * (discount / 100)); //equation
+        $('#subTotalPriceLabel').text(discountedTotal.toFixed(2)); // meken decimal dekakata convert karanoo like 20.123 awill tibboth 20.12 karanoo
+
+        var cash = parseFloat($('#cash').val());  // same thing checked above
+        if (isNaN(cash) || cash < 0) {
+            cash = 0;
+        }
+
+        var balance = cash - discountedTotal; //equation
+        $('#balance').val(balance.toFixed(2));
+    });
+
+
+});
+
+
+

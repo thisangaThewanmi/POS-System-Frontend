@@ -150,6 +150,12 @@ function updateItemQty() {
         }
 
     }
+
+
+    var OrderItemId = $('#O-itemID').val();
+
+
+
 }
 
 
@@ -176,7 +182,7 @@ $("#btnAddItem").on('click', () => {
     }
 
 
-    updateItemQty();
+   /* updateItemQty();*/
 
 
      total = OrderQty * OrderItemPrice;
